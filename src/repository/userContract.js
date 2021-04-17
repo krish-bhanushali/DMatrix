@@ -30,6 +30,11 @@ export const DNEXUS_USERCONTRACT_ABI = [
 				"internalType": "string",
 				"name": "_email",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_designation",
+				"type": "string"
 			}
 		],
 		"name": "createUser",
@@ -45,15 +50,35 @@ export const DNEXUS_USERCONTRACT_ABI = [
 				"type": "address"
 			}
 		],
-		"name": "getuserDataName",
+		"name": "getData",
 		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
 			{
 				"internalType": "string",
 				"name": "",
 				"type": "string"
 			}
 		],
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -89,6 +114,11 @@ export const DNEXUS_USERCONTRACT_ABI = [
 			{
 				"internalType": "string",
 				"name": "email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "designation",
 				"type": "string"
 			},
 			{

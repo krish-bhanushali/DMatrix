@@ -65,6 +65,11 @@ export const DNEXUS_SCHOOLCONTRACT_ABI = [
 				"internalType": "string",
 				"name": "_email",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_designation",
+				"type": "string"
 			}
 		],
 		"name": "addStudent",
@@ -122,6 +127,11 @@ export const DNEXUS_SCHOOLCONTRACT_ABI = [
 				"internalType": "string",
 				"name": "_email",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_designation",
+				"type": "string"
 			}
 		],
 		"name": "createUser",
@@ -140,6 +150,45 @@ export const DNEXUS_SCHOOLCONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -178,25 +227,6 @@ export const DNEXUS_SCHOOLCONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_userAddress",
-				"type": "address"
-			}
-		],
-		"name": "getuserDataName",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -340,6 +370,11 @@ export const DNEXUS_SCHOOLCONTRACT_ABI = [
 			{
 				"internalType": "string",
 				"name": "email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "designation",
 				"type": "string"
 			},
 			{

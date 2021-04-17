@@ -1,4 +1,4 @@
-import { DNEXUS_USERCONTRACT_ABI } from '../assets/userContract';
+import { DNEXUS_USERCONTRACT_ABI } from '../repository/userContract';
 
 export class UserContract {
 

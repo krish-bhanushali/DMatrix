@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
-const Header = ({ history }) => {
+const Header = ({ history , accountObject}) => {
   // State of our Menu
   const [state, setState] = useState({
     initial: false,
@@ -60,7 +60,7 @@ const Header = ({ history }) => {
             </div>
             
             <div className="dmatrix-nav-item">
-            <Link to="/account-info">Your Account</Link>
+            <Link to="/account-info">Your Account: {accountObject.web3Account}</Link>
             </div>
             <div className="menu">
               <button disabled={disabled} onClick={handleMenu}>
