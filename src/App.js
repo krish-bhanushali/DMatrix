@@ -6,6 +6,11 @@ import LoginForm from "./components/Login";
 import StudentDash from "./components/StudentDash"
 import SchoolDash from "./components/SchoolDash"
 
+import {DNEXUS_USERCONTRACT_DEPLOY_ADDRESS,DNEXUS_FILECONTRACT_DEPLOY_ADDRESS,DNEXUS_SCHOOLCONTRACT_DEPLOY_ADDRESS} from './repository/address';
+import {DNEXUS_FILECONTRACT_ABI} from './repository/fileContract';
+import {DNEXUS_SCHOOLCONTRACT_ABI} from './repository/schoolContract';
+import {DNEXUS_USERCONTRACT_ABI} from './repository/userContract';
+
 import Web3 from 'web3';
 
 
@@ -13,7 +18,10 @@ import Web3 from 'web3';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
- 
+ let web3 = new Web3("ws://localhost:7545");
+ const [userContract,setUserContract] = useState();
+ const [fileContract,setFileContract] = useState();
+ const [schoolContract,setSchoolContract] = useState();
 
  const [web3objectDetails,setWeb3Object] = useState({
    web3Account : "",
@@ -36,8 +44,23 @@ function App() {
   else {
     window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
   }
-
+  
   await loadBlockchainData() 
+  let userContract = new web3.eth.Contract(DNEXUS_USERCONTRACT_ABI, DNEXUS_USERCONTRACT_DEPLOY_ADDRESS);
+  setUserContract(userContract);
+  console.log(userContract);
+
+  let fileContract = new web3.eth.Contract(DNEXUS_FILECONTRACT_ABI, DNEXUS_FILECONTRACT_DEPLOY_ADDRESS);
+  setFileContract(fileContract);
+  console.log(fileContract);
+
+  let schoolContract = new web3.eth.Contract(DNEXUS_SCHOOLCONTRACT_ABI, DNEXUS_SCHOOLCONTRACT_DEPLOY_ADDRESS);
+  setSchoolContract(schoolContract);
+  console.log(schoolContract);
+  console.log('file and user contract and school contract')
+
+
+
  }
   
  async function loadBlockchainData() {
@@ -51,6 +74,7 @@ function App() {
     web3Account: accounts[0],
     web3AccountNetworkId : networkId
   })
+
  
  }
 
@@ -67,10 +91,10 @@ function App() {
                 <Route exact path="/opportunities" component={Opportunities} />
                 <Route exact path="/solutions" component={Solutions} />
                 <Route exact path="/contact-us" component={Contact} />
-                <Route exact path="/Login" render={(props) => <LoginForm accountObject={web3objectDetails}/>} />
+                <Route exact path="/Login" render={(props) => <LoginForm accountObject={web3objectDetails} web3Object ={web3} schoolContract={schoolContract}/>} />
                 <Route exact path="/account-info" component={AccountInfo} />
-                <Route exact path="/student-dash" component={StudentDash} />
-                <Route exact path="/school-dash" component={SchoolDash} />
+                <Route exact path="/student-dash" render={(props) => <StudentDash accountObject={web3objectDetails} web3Object ={web3} userContract={userContract} fileContract={fileContract}/>} />
+                <Route exact path="/school-dash"  render={(props) => <SchoolDash accountObject={web3objectDetails} web3Object ={web3} userContract={userContract} fileContract={fileContract} schoolContract={schoolContract}/>} />
 
               </Switch>
             </div>

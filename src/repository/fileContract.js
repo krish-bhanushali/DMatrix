@@ -1,4 +1,3 @@
-
 export const DNEXUS_FILECONTRACT_ABI = [
 	{
 		"anonymous": false,
@@ -48,6 +47,29 @@ export const DNEXUS_FILECONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_studentAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_fileHash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			}
+		],
+		"name": "fileTransfer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
