@@ -30,10 +30,20 @@ body {
         font-weight: 500;
       }
       h5 {
-        margin-top: 260px;
-        font-size: 24px;
+        position: absolute;
+        margin-top: 160px;
+        font-size: 32px;
         font-weight: 600;
-        padding-right: 360px;
+        padding-right: 860px;
+
+        
+      }
+
+      .dLogo {
+        right: 10%;
+        top: -95px;
+        position: absolute;
+        display: inline;
       }
     }
   }

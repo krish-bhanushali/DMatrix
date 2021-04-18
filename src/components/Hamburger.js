@@ -19,13 +19,17 @@ import newyork from "../images/newyork.webp";
 import sanfrancisco from "../images/sanfrancisco.webp";
 import beijing from "../images/beijing.webp";
 import security from "../images/secure.jpg";
-import dAPP from "../images/decentralizedApp.jpg";
+import dAPP from "../images/blockchain.jpg";
+import prag from "../images/Prag.jpg";
+import offchain from "../images/offchain.jpg";
+import Robust from "../images/Robust.jpg";
+
 const cities = [
   { name: "Security", image: security ,feature:"Propose a novel privacy mechanism to protect the privacy of the students’ credentials"},
   { name: "Decentralized Application", image: dAPP ,feature: "Develop a Decentralized Application (DApp) using Ethereum blockchain as a proof-of-concept of the proposed architecture."},
-  { name: "Robustness", image: newyork,feature: "Analyse the robustness of the developed DApp against the most widespread security attacks." },
-  { name: "Pragmatic Architecture", image: sanfrancisco,feature: "Introduce a novel blockchain-based pragmatic architecture for secure sharing of students’ credentials among all the stakeholders in the education ecosystem." },
-  { name: "Offchain Storing Mech.", image: beijing, feature:"Utilize an off-chain storing mechanism to improve the scalability of the blockchain system" }
+  { name: "Robustness", image: Robust,feature: "Analyse the robustness of the developed DApp against the most widespread security attacks." },
+  { name: "Pragmatic Architecture", image: prag,feature: "Introduce a novel blockchain-based pragmatic architecture for secure sharing of students’ credentials among all the stakeholders in the education ecosystem." },
+  { name: "Offchain Storing Mech.", image: offchain, feature:"Utilize an off-chain storing mechanism to improve the scalability of the blockchain system" }
 ];
 
 
@@ -137,10 +141,8 @@ const Hamburger = ({ state }) => {
               <div ref={el => (info = el)} className='info'>
                 <h3>Our Promise</h3>
                 <p>
-                  The passage experienced a surge in popularity during the 1960s
-                  when Letraset used it on their dry-transfer sheets, and again
-                  during the 90s as desktop publishers bundled the text with
-                  their software.
+                  The passage experienced a surge in popularity of hybrid college mechanism due to COVID 
+                  We promise to fulfill secure storage of college credentials with a solid architecture to ensure a great experienced and tension free storage
                 </p>
                 <h4>{solutionInfo.titleInfo}</h4>
                   <p>

@@ -1,10 +1,10 @@
 import {Jumbotron, Container,Card, CardColumns, Button, Row,Col, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './schoolDash.css';
 import {useDropzone} from 'react-dropzone';
 import { useRef, useEffect, useState } from "react";
 const IPFS = require('ipfs-api');
 const ipfs = new IPFS({ host: 'ipfs.infura.io',  port: 5001,protocol: 'https' });
-
 
 const SchoolDash = ({accountObject,web3Object,userContract,fileContract,schoolContract}) => {
   let web3 = web3Object;
@@ -116,19 +116,19 @@ async function handleFileInput(e){
 
 
     return ( <div className="schooldashcontainer">
- <Jumbotron fluid>
+ <Jumbotron fluid className="cont">
 
   <Container>
-    <h1>School Dashboard</h1>
-    <p>
+    <h1  className="title">School Dashboard</h1>
+    <p className="para">
      Account Address: {accountObject.web3Account}
 
     
     </p>
-    <p>
+    <p className="para">
       Email Address : {email}
     </p>
-    <p>Hello {destination}!! {fName} {lName}</p>
+    <p className="para">Hello {destination}!! {fName} {lName}</p>
   </Container>
 </Jumbotron>
 
@@ -136,7 +136,7 @@ async function handleFileInput(e){
     <Col><h2>
     Your Students:{studentCount}
 </h2></Col>
-<Col><a onClick={(e)=>getStudentList()}>Refresh</a></Col>
+<Col><a onClick={(e)=>getStudentList()} className="button">Refresh</a></Col>
 </Row>
 <p>
 
@@ -148,7 +148,7 @@ async function handleFileInput(e){
 <MapComponent Mapdata={studentMap}/>
 
 
-<h2>
+<h2 className="title1" style={{marginBottom:'30px'}}>
     Upload Student Credentials:
 </h2>
 <Form.Group controlId="formGridAddress1">
@@ -169,8 +169,8 @@ async function handleFileInput(e){
       <Form.File.Input onChange={(e) => handleFileInput(e)}/>
     </Form.File>
   </div>
-<p>Just Select your file and it will be uploaded</p>
-<p>Upload Status:{fileUploadStatus}</p>
+<p style={{letterSpacing:"1px"}}>Just Select your file and it will be uploaded</p>
+<p style={{letterSpacing:"1px"}}>Upload Status:{fileUploadStatus}</p>
 
 
 <p></p>
@@ -194,10 +194,10 @@ export default SchoolDash;
       {
         Mapdata["data"].map(el=>(
           <div className="cardColumnFile" key={el.name}>
-      <Card style={{ width: '18rem' , letterSpacing:'1px' }}>
+      <Card style={{  width: '28rem' , letterSpacing:'1px'  }}>
         <Card.Body>
-          <Card.Title>{el.name}</Card.Title>
-          <Card.Subtitle>{el.studentAccount}</Card.Subtitle>
+          <Card.Title style={{textAlign:'center', fontStyle:'italic', color:'lightgrey'}}>{el.name}</Card.Title>
+          <Card.Subtitle style={{textAlign:'center', fontStyle:'italic', color:'lightgrey'}}>{el.studentAccount}</Card.Subtitle>
            
               
         </Card.Body>

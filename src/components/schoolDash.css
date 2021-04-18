@@ -1,0 +1,27 @@
+.cont{
+    background-color: #191970;
+}
+.title{
+    color: azure;
+    text-align: center;
+}
+.para{
+    margin-top: 50px;
+    color: azure;
+    text-align: center;
+}
+.button{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    border: 1px solid;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.row{
+    margin-top: 50px;
+}
+.title1{
+    margin-top: 50px;
+}

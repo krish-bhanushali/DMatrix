@@ -10,6 +10,8 @@ import {DNEXUS_USERCONTRACT_DEPLOY_ADDRESS,DNEXUS_FILECONTRACT_DEPLOY_ADDRESS,DN
 import {DNEXUS_FILECONTRACT_ABI} from './repository/fileContract';
 import {DNEXUS_SCHOOLCONTRACT_ABI} from './repository/schoolContract';
 import {DNEXUS_USERCONTRACT_ABI} from './repository/userContract';
+import blockChainLogo from './images/dLogo.png';
+import {Row,Col} from 'react-bootstrap';
 
 import Web3 from 'web3';
 
@@ -125,9 +127,18 @@ function Home() {
   return (
     <div className="container">
       <div className="wrapper">
-        <h5>
-          The <b>DMatrix</b>, is a creative software driven by the power of blockchain to securely store your data
-        </h5>
+     
+       
+         
+          <h5>The <b>DMatrix</b>, is a creative software driven by the power of blockchain to securely store your data
+       
+       <div className="dLogo">
+       <img src={blockChainLogo} width="400px" alt=""></img>
+       </div>
+       </h5>
+        
+       
+       
       </div>
     </div>
   );

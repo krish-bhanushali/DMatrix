@@ -18,6 +18,7 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
   const [fileMap,setMap] = useState({data : [{
     name:"Secure File (Demo)",
     fileHash:"Demo"
+   
   }]});
   const [fileUploadStatus,setUploadStatus] = useState('File Not selected');
 
@@ -67,7 +68,8 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
           // })
           oldFile.push({
             name:"Secure File:"+i,
-            fileHash:data
+            fileHash:data,
+            
           })
            
           
@@ -127,18 +129,18 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
 
 
     return ( <div className="studentdashcontainer">
-        <Jumbotron fluid>
+        <Jumbotron fluid className="cont">
   <Container>
-    <h1>Student Dashboard</h1>
-    <p>
+    <h1 className="title">Student Dashboard</h1>
+    <p className="para">
      Account Address: {accountObject.web3Account}
 
     
     </p>
-    <p>
+    <p className="para">
       Email Address : {email}
     </p>
-    <p>Hello {destination}!! {fName} {lName}</p>
+    <p className="para">Hello !! {fName} {lName}</p>
   </Container>
 </Jumbotron>
 
@@ -149,7 +151,7 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
     Your Files:
 </h2></Col>
     {/* // eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-    <Col><a onClick={(e)=>getFilesRefresh()}>Refresh</a></Col>
+    <Col><a onClick={(e)=>getFilesRefresh()} className="button">Refresh</a></Col>
 </Row>
 <p>
 
@@ -169,7 +171,7 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
 
 </p>
 
-<h2>
+<h2 className="title1" style={{marginBottom:'30px'}}>
     Upload your Credentials:
 </h2>
 
@@ -179,8 +181,8 @@ const StudentDash = ({accountObject,web3Object,userContract,fileContract}) => {
       <Form.File.Input onChange={(e) => handleFileInput(e)}/>
     </Form.File>
   </div>
-<p>Just Select your file and it will be uploaded</p>
-<p>Upload Status:{fileUploadStatus}</p>
+<p style={{letterSpacing:"1px"}}>Just Select your file and it will be uploaded</p>
+<p style={{letterSpacing:"1px"}}>Upload Status:{fileUploadStatus}</p>
 
 
 <p></p>
@@ -200,9 +202,9 @@ export default StudentDash;
           <div className="cardColumnFile" key={el.name}>
       <Card style={{ width: '18rem' , letterSpacing:'1px' }}>
         <Card.Body>
-          <Card.Title>{el.name}</Card.Title>
+          <Card.Title style={{textAlign:'center', fontStyle:'italic', color:'lightgrey'}}>{el.name}</Card.Title>
         
-          <Card.Link href={"https://ipfs.io/ipfs/"+el.fileHash} target="_blank">Open File</Card.Link>
+          <Card.Link href={"https://ipfs.io/ipfs/"+el.fileHash} target="_blank" style={{textAlign:'center', fontStyle:'italic', color:'blue'}}>Open File</Card.Link>
           
         </Card.Body>
       </Card>
